@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row mt-5">
+        <div class="col col-6 offset-3">
+            <div class="card">
+                <div class="card-header text-center text-info text-uppercase">Sign In Please</div>
+                <div class="card-body">
+                    <form (ngSubmit)="onSignin(f)" #f="ngForm">
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ngModel name="email" required email />
+                                <small class="text-danger" *ngIf="f.controls.email?.errors?.required && f.controls.email?.touched">
+                                    Email is required</small>
+                                <small class="text-danger" *ngIf="f.controls.email?.errors?.email && f.controls.email?.touched">
+                                    Email is invalid. Please enter valid email.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" ngModel name="password" required />
+                                <small class="text-danger" *ngIf="f.controls.password?.errors?.required &&f.controls.password?.touched">
+                                    Password is required</small><br />
+                            </div>
+                                <small class="text-danger" *ngIf="error?.code">
+                                    {{ error?.message }}</small>
+                        </div>
+
+                        <div class="form-group row">
+                            <span class="col-sm-3 offset-sm-3">
+                                <button class="btn btn-success" type="submit" [disabled]="!f.valid">
+                                    Sign in
+                                </button>
+                            </span>
+                            <span class="ml-3">
+                                <button class="btn btn-danger" [routerLink]="['/']">
+                                    Cancel
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<h3 class="my-3 text-center">User Profile</h3>
+<div class="card user-card" style="margin-top: 40%;">
+    <div style="margin-top: -40%;">
+        <img [src]="gitUser.avatar_url" width="70%" class="img-fluid mx-auto d-block rounded-circle profile-pic border-2 border-white mt-2">
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title">
+            {{gitUser.name}}
+        </h5>
+        <p class="card-text">BIO: {{gitUser.bio}}</p>
+        <p class="card-text">Name: {{gitUser.name}}</p>
+        <p class="card-text" *ngIf="gitUser.blog">Blog: {{gitUser.blog}}</p>
+        <p class="card-text">
+            Updated at:
+            {{ gitUser.updated_at | date: "short" }}
+        </p>
+        <!-- <p class="card-text" *ngFor="let prop of gitUserProps">
+            <span *ngIf="gitUser[prop]">
+                {{prop}}: {{gitUser[prop]}}
+            </span>
+        </p> -->
+    </div>
+</div>

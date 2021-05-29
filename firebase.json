@@ -1,0 +1,18 @@
+{
+  "hosting": {
+    "public": "dist/github-login-firebase",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "site": "r-github-repos"
+
+  }
+}

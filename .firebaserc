@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "github-authentication-d85b6": {
+      "hosting": {
+        "github-login-firebase": [
+          "github-authentication-d85b6"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "github-authentication-d85b6"
+  }
+}
